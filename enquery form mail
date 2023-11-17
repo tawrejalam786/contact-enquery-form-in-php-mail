@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | MAA TRAVELS</title>    
+  <!--Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <!--Simple Line Icons-->
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <!--Owl Carousel-->
+  <link rel="stylesheet" href="vendors/owl.carousel/owl.carousel.css">
+  <!--Select-->
+  <link rel="stylesheet" href="vendors/bootstrap-select/css/bootstrap-select.css">   
+  <!--Theme Styles-->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>   
+  <!--Top Bar-->
+  <?php include"header.php";?>
+	<!--Page Cover-->
+	<section class="row page-cover">
+		<div class="container">
+			<h2 class="h1 page-title">contact us</h2>
+			<ol class="breadcrumb">
+				<li><a href="index.php">home</a></li>
+				<li class="active">contact</li>
+			</ol>
+		</div>
+	</section>  	
+	<section class="row wrapper-contact">
+		<div class="container contact-map ipad-width">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117384.62865843954!2d77.28814299726562!3d23.160356699999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c450a609bbdc7%3A0x1273a61c6b24f59f!2sGharoda%20BDA%20Colony%20Salaiya!5e0!3m2!1sen!2sin!4v1693380412529!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<div class="contact-form-area col-md-push-8 col-sm-push-6 col-md-4 col-sm-6">
+				<div class="form-area row">
+					<div class="this-inner row m0">
+						<h3 class="this-title">Help us better!</h3>
+ 						<div class="row m0 ">
+ 							<form method="POST" class="contactForm1">
+							<div class="input-group">
+								<input type="text" name="name"  class="form-control" placeholder="Your name">
+								<span class="input-group-addon"><i class="ion-person"></i></span>
+							</div>
+							<div class="input-group">
+								<input type="email" name="email"  class="form-control" placeholder="Enter your email">
+								<span class="input-group-addon"><i class="ion-email-unread"></i></span>
+							</div>
+							<div class="input-group">
+								<input type="tel" name="phone"  class="form-control" placeholder="Phone">
+								<span class="input-group-addon"><i class="ion-ios-telephone"></i></span>
+							</div>
+						
+							<h5 class="textarea-label">Your comment <i class="ion-chatbubble-working"></i></h5>
+							<textarea name="query"  class="form-control"></textarea>
+							<button type="submit" name="mailsend" value=" MESSENGE" class="btn btn-primary">SEND</button>
+						</form>
+						<?php 
+						    if(isset($_POST['mailsend'])){
+						        extract($_POST);
+						        
+						        $to = "pinkytourandtravels786@gmail.com";
+$subject = "Enquiry email";
+
+$message = "
+<html>
+<head>
+<title>Enquiry email</title>
+</head>
+<body>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Message</th>
+</tr>
+<tr>
+<td>$name</td>
+<td>$email</td>
+<td>$phone</td>
+<td>$query</td>
+</tr>
+</table>
+</body>
+</html>
+";
+
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+$headers .= 'From: <pinkitourandtravels.com>' . "\r\n";
+
+
+if(mail($to,$subject,$message,$headers)){
+    echo "<script>alert('Mail Sent Successfully')</script>";
+}
+						    }
+						?>
+ 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="media contact-addresses ipad-width">
+				<div class="media-left  media-middle">
+					<div class="img-holder">
+					
+						<div class="hover-box">  							
+						<ul class="nav nav-pills social-nav">
+							<li><a href="#" class="ion-social-facebook" data-toggle="tooltip" data-placement="top" title="Facbook"></a></li>
+							<li><a href="#" class="ion-social-twitter" data-toggle="tooltip" data-placement="top" title="Twitter"></a></li>
+							<li><a href="#" class="ion-social-googleplus" data-toggle="tooltip" data-placement="top" title="Google Plus"></a></li>
+						</ul>
+						</div>
+				</div>
+				</div>
+				<div class="media-body media-middle">
+					
+					<div class="col-md-6 address-portion">
+						<h4 class="this-title">OFFICE ADDRESS</h4>
+ 						<ul class="nav foot-nav style3">
+ 							<li><i class="ion-location"></i> Madhav Puram, Meerut City</li>
+ 							<li><i class="ion-ios-telephone"></i>+91 9760*****6, 807****87</li>
+ 							<li><i class="ion-email-unread"></i><a href="mailto:pinkytourandtravels786@gmail.com">pinkytourandtravels786@gmail.com</a></li>
+ 						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>   	
+ 
+ 	<?php include"footer.php";?>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!--Google Map-->
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src="js/gmaps.min.js"></script>
+  <!--Contact-->    
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/contact.js"></script>
+  <!--Owl Carousel-->
+  <script src="vendors/owl.carousel/owl.carousel.min.js"></script>
+  <!--CounterUp-->
+  <script src="vendors/couterup/jquery.counterup.min.js"></script>
+  <!--WayPoints-->
+  <script src="vendors/waypoint/waypoints.min.js"></script>
+  <!--Select-->
+  <script src="vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <!--Instafeed-->
+  <script src="vendors/instafeed/instafeed.min.js"></script>
+  <!-- Isotope -->
+  <script src="vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="vendors/isotope/isotope.min.js"></script>
+  <!--Theme Script-->    
+  <script src="js/theme.js"></script>
+</body>
+</html>
