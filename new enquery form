@@ -1,0 +1,29 @@
+//new enquery form php mail 
+
+<?php
+        if (isset($_POST['submit'])) {
+          $name = $_POST['name'];
+          $email = $_POST['email'];
+          $phone = $_POST['phone'];
+          $company_name = $_POST['company_name'];
+          $subject = $_POST['subject'];
+          $message = $_POST['message'];     
+
+        //   $to = "welcome@krishnatravelsvadodara.com";
+          $to = "avneeshelevators@gmail.com";
+
+
+          $subject = "mail from World Wide Engineers";
+          $text = "name: " . $name . "\r\n" . "email: " . $email . "\r\n" . "phone: " . $phone . "\r\n" . "company_name: " . $company_name . "\r\n" . "subject: " . $subject . "\r\n" . "message: " . $message . "\r\n";
+
+          $headers = "From:" . $email;
+          $header .= "MIME-Version: 1.0\r\n";
+          $header .= "Contact-type: text/html/r/n";
+
+          if (mail($to, $subject, $text, $headers)) {
+            header('location: index.php');
+          } else {
+            echo "mail not send";
+          }
+        }
+        ?>
